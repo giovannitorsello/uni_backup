@@ -1,4 +1,4 @@
-# TapeGuard v2
+# Universal Easy Backup 
 
 Gestione backup multi-backend con rotazione cassette e integrazione CRM/GLPI.
 
