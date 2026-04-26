@@ -1,0 +1,14 @@
+# Target labels
+ microsoft.gsl-populate
+# Source files and their labels
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/microsoft.gsl-populate
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/microsoft.gsl-populate.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/microsoft.gsl-populate-complete.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-build.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-configure.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-download.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-install.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-mkdir.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-patch.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-test.rule
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-update.rule

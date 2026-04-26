@@ -1,0 +1,26 @@
+# List of packages provided by CPM
+---
+CLI11:
+    source_dir: 
+    binary_dir: 
+    version: 2.4.1
+fmt:
+    source_dir: 
+    binary_dir: 
+    version: 10.1.0
+Microsoft.GSL:
+    source_dir: /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-src
+    binary_dir: /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-build
+    version: 4.0.0
+tl-expected:
+    source_dir: /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-src
+    binary_dir: /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-build
+    version: 1.0.0
+utf8cpp:
+    source_dir: 
+    binary_dir: 
+    version: 2.3.4
+xxHash:
+    source_dir: 
+    binary_dir: 
+    version: 0.8.0

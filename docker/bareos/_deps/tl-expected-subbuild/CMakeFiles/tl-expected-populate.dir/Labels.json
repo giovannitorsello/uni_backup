@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/CMakeFiles/tl-expected-populate"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/CMakeFiles/tl-expected-populate.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/CMakeFiles/tl-expected-populate-complete.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/tl-expected-populate-prefix/src/tl-expected-populate-stamp/tl-expected-populate-build.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/tl-expected-populate-prefix/src/tl-expected-populate-stamp/tl-expected-populate-configure.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/tl-expected-populate-prefix/src/tl-expected-populate-stamp/tl-expected-populate-download.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/tl-expected-populate-prefix/src/tl-expected-populate-stamp/tl-expected-populate-install.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/tl-expected-populate-prefix/src/tl-expected-populate-stamp/tl-expected-populate-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/tl-expected-populate-prefix/src/tl-expected-populate-stamp/tl-expected-populate-patch.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/tl-expected-populate-prefix/src/tl-expected-populate-stamp/tl-expected-populate-test.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/tl-expected-subbuild/tl-expected-populate-prefix/src/tl-expected-populate-stamp/tl-expected-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"tl-expected-populate"
+		],
+		"name" : "tl-expected-populate"
+	}
+}

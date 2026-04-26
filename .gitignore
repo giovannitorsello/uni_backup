@@ -1,0 +1,22 @@
+# Ambiente
+.env
+.env.local
+
+# Sorgenti Bareos (clonati con make clone-bareos, NON committare)
+docker/bareos/bareos-src/
+
+# SSL certs
+docker/nginx/certs/
+
+# Node
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+frontend/dist/
+backend/logs/
+backups/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

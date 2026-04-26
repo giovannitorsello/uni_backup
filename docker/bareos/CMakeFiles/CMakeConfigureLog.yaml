@@ -1,0 +1,1147 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:35 (project)"
+    message: |
+      The system is: Linux - 6.12.74+deb13+1-amd64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/3.31.6/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/3.31.6/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-orsQYD"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-orsQYD"
+    cmakeVariables:
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-orsQYD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_ca2c2/fast
+        /bin/gmake  -f CMakeFiles/cmTC_ca2c2.dir/build.make CMakeFiles/cmTC_ca2c2.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-orsQYD'
+        Building C object CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o
+        /bin/cc   -fPIE   -v -o CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ca2c2.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_ca2c2.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -o /tmp/cc57aLGh.s
+        GNU C17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        warning: MPFR header version 4.2.1 differs from library version 4.2.2.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/14/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 0051dfc1fa4e89ba97760da93f2546f3
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ca2c2.dir/'
+         as -v --64 -o CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o /tmp/cc57aLGh.s
+        GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_ca2c2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca2c2.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ca2c2' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ca2c2.'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqPyiIT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_ca2c2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 14.2.0
+        /bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqPyiIT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_ca2c2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.44
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ca2c2' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ca2c2.'
+        /bin/cc  -v -Wl,-v CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o -o cmTC_ca2c2
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-orsQYD'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/14/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/14/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-orsQYD']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_ca2c2/fast]
+        ignore line: [/bin/gmake  -f CMakeFiles/cmTC_ca2c2.dir/build.make CMakeFiles/cmTC_ca2c2.dir/build]
+        ignore line: [gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-orsQYD']
+        ignore line: [Building C object CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/bin/cc   -fPIE   -v -o CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ca2c2.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_ca2c2.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -o /tmp/cc57aLGh.s]
+        ignore line: [GNU C17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [warning: MPFR header version 4.2.1 differs from library version 4.2.2.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 0051dfc1fa4e89ba97760da93f2546f3]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ca2c2.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o /tmp/cc57aLGh.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_ca2c2]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca2c2.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ca2c2' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ca2c2.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqPyiIT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_ca2c2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccqPyiIT.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_ca2c2] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 14.2.0]
+        ignore line: [/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccqPyiIT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_ca2c2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_ca2c2.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Running the C compiler's linker: "/bin/ld" "-v"
+      ld di GNU (GNU Binutils for Debian) 2.44
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Running the C compiler's linker: "/bin/ld" "-V"
+      ld di GNU (GNU Binutils for Debian) 2.44
+        Emulazioni supportate:
+         elf_x86_64
+         elf32_x86_64
+         elf_i386
+         elf_iamcu
+         i386pep
+         i386pe
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Running the C compiler's linker: "/bin/ld" "--version"
+      ld di GNU (GNU Binutils for Debian) 2.44
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      Questo programma è software libero; siete liberi di ridistribuirlo secondo i termini
+      della GNU General Public License versione 3 o (a scelta) una versione più recente.
+      Questo programma non ha assolutamente alcuna garanzia.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-yn8iAR"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-yn8iAR"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-yn8iAR'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_3b226/fast
+        /bin/gmake  -f CMakeFiles/cmTC_3b226.dir/build.make CMakeFiles/cmTC_3b226.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-yn8iAR'
+        Building CXX object CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o
+        /bin/c++   -fPIE   -v -o CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3b226.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_3b226.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -o /tmp/cc8QIG8R.s
+        GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        warning: MPFR header version 4.2.1 differs from library version 4.2.2.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/14"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/14
+         /usr/include/x86_64-linux-gnu/c++/14
+         /usr/include/c++/14/backward
+         /usr/lib/gcc/x86_64-linux-gnu/14/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3b226.dir/'
+         as -v --64 -o CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc8QIG8R.s
+        GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_3b226
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b226.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3b226' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3b226.'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTIf8dP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3b226 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 14.2.0
+        /bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTIf8dP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3b226 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.44
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3b226' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3b226.'
+        /bin/c++  -v -Wl,-v CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_3b226
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-yn8iAR'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/14]
+          add: [/usr/include/x86_64-linux-gnu/c++/14]
+          add: [/usr/include/c++/14/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/14] ==> [/usr/include/c++/14]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/14] ==> [/usr/include/x86_64-linux-gnu/c++/14]
+        collapse include dir [/usr/include/c++/14/backward] ==> [/usr/include/c++/14/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/14/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/14;/usr/include/x86_64-linux-gnu/c++/14;/usr/include/c++/14/backward;/usr/lib/gcc/x86_64-linux-gnu/14/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-yn8iAR']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_3b226/fast]
+        ignore line: [/bin/gmake  -f CMakeFiles/cmTC_3b226.dir/build.make CMakeFiles/cmTC_3b226.dir/build]
+        ignore line: [gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-yn8iAR']
+        ignore line: [Building CXX object CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/bin/c++   -fPIE   -v -o CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3b226.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_3b226.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -o /tmp/cc8QIG8R.s]
+        ignore line: [GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [warning: MPFR header version 4.2.1 differs from library version 4.2.2.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/14"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/14]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/14]
+        ignore line: [ /usr/include/c++/14/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3b226.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc8QIG8R.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_3b226]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b226.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3b226' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3b226.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTIf8dP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3b226 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccTIf8dP.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_3b226] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 14.2.0]
+        ignore line: [/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTIf8dP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_3b226 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_3b226.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Running the CXX compiler's linker: "/bin/ld" "-v"
+      ld di GNU (GNU Binutils for Debian) 2.44
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Running the CXX compiler's linker: "/bin/ld" "-V"
+      ld di GNU (GNU Binutils for Debian) 2.44
+        Emulazioni supportate:
+         elf_x86_64
+         elf32_x86_64
+         elf_i386
+         elf_iamcu
+         i386pep
+         i386pe
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:205 (project)"
+    message: |
+      Running the CXX compiler's linker: "/bin/ld" "--version"
+      ld di GNU (GNU Binutils for Debian) 2.44
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      Questo programma è software libero; siete liberi di ridistribuirlo secondo i termini
+      della GNU General Public License versione 3 o (a scelta) una versione più recente.
+      Questo programma non ha assolutamente alcuna garanzia.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "cmake/FindxxHash.cmake:87 (check_include_files)"
+      - "cmake/CPM.cmake:249 (find_package)"
+      - "cmake/CPM.cmake:720 (cpm_find_package)"
+      - "cmake/BareosCpmPackages.cmake:93 (CPMAddPackage)"
+      - "CMakeLists.txt:213 (include)"
+    checks:
+      - "Looking for include file xxh_x86dispatch.h"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-Gmwmsf"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-Gmwmsf"
+    cmakeVariables:
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "XXHASH_ENABLE_DISPATCH"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-Gmwmsf'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_61a5c/fast
+        /bin/gmake  -f CMakeFiles/cmTC_61a5c.dir/build.make CMakeFiles/cmTC_61a5c.dir/build
+        gmake[1]: ingresso nella directory «/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-Gmwmsf»
+        Building C object CMakeFiles/cmTC_61a5c.dir/XXHASH_ENABLE_DISPATCH.c.o
+        /bin/cc   -fPIE -o CMakeFiles/cmTC_61a5c.dir/XXHASH_ENABLE_DISPATCH.c.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-Gmwmsf/XXHASH_ENABLE_DISPATCH.c
+        Linking C executable cmTC_61a5c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61a5c.dir/link.txt --verbose=1
+        /bin/cc CMakeFiles/cmTC_61a5c.dir/XXHASH_ENABLE_DISPATCH.c.o -o cmTC_61a5c
+        gmake[1]: uscita dalla directory «/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-Gmwmsf»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "cmake/PrefixMap.cmake:25 (check_c_compiler_flag)"
+      - "CMakeLists.txt:215 (include)"
+    checks:
+      - "Performing Test c_compiler_debug_prefix_map"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-5TU6tU"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-5TU6tU"
+    cmakeVariables:
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "c_compiler_debug_prefix_map"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-5TU6tU'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_c1504/fast
+        /bin/gmake  -f CMakeFiles/cmTC_c1504.dir/build.make CMakeFiles/cmTC_c1504.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-5TU6tU'
+        Building C object CMakeFiles/cmTC_c1504.dir/src.c.o
+        /bin/cc -Dc_compiler_debug_prefix_map  -fPIE   -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -o CMakeFiles/cmTC_c1504.dir/src.c.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-5TU6tU/src.c
+        Linking C executable cmTC_c1504
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1504.dir/link.txt --verbose=1
+        /bin/cc CMakeFiles/cmTC_c1504.dir/src.c.o -o cmTC_c1504
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-5TU6tU'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "cmake/PrefixMap.cmake:28 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:215 (include)"
+    checks:
+      - "Performing Test cxx_compiler_debug_prefix_map"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-RY6Jrr"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-RY6Jrr"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "cxx_compiler_debug_prefix_map"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-RY6Jrr'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_7902a/fast
+        /bin/gmake  -f CMakeFiles/cmTC_7902a.dir/build.make CMakeFiles/cmTC_7902a.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-RY6Jrr'
+        Building CXX object CMakeFiles/cmTC_7902a.dir/src.cxx.o
+        /bin/c++ -Dcxx_compiler_debug_prefix_map  -fPIE   -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -o CMakeFiles/cmTC_7902a.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-RY6Jrr/src.cxx
+        Linking CXX executable cmTC_7902a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7902a.dir/link.txt --verbose=1
+        /bin/c++ CMakeFiles/cmTC_7902a.dir/src.cxx.o -o cmTC_7902a
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-RY6Jrr'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "cmake/PrefixMap.cmake:39 (check_c_compiler_flag)"
+      - "CMakeLists.txt:215 (include)"
+    checks:
+      - "Performing Test c_compiler_macro_prefix_map"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VJzrO9"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VJzrO9"
+    cmakeVariables:
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "c_compiler_macro_prefix_map"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VJzrO9'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_77ee8/fast
+        /bin/gmake  -f CMakeFiles/cmTC_77ee8.dir/build.make CMakeFiles/cmTC_77ee8.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VJzrO9'
+        Building C object CMakeFiles/cmTC_77ee8.dir/src.c.o
+        /bin/cc -Dc_compiler_macro_prefix_map  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -fPIE   -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -o CMakeFiles/cmTC_77ee8.dir/src.c.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VJzrO9/src.c
+        Linking C executable cmTC_77ee8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77ee8.dir/link.txt --verbose=1
+        /bin/cc  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  CMakeFiles/cmTC_77ee8.dir/src.c.o -o cmTC_77ee8
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VJzrO9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "cmake/PrefixMap.cmake:42 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:215 (include)"
+    checks:
+      - "Performing Test cxx_compiler_macro_prefix_map"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-96SY99"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-96SY99"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "cxx_compiler_macro_prefix_map"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-96SY99'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_91555/fast
+        /bin/gmake  -f CMakeFiles/cmTC_91555.dir/build.make CMakeFiles/cmTC_91555.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-96SY99'
+        Building CXX object CMakeFiles/cmTC_91555.dir/src.cxx.o
+        /bin/c++ -Dcxx_compiler_macro_prefix_map  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -fPIE   -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -o CMakeFiles/cmTC_91555.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-96SY99/src.cxx
+        Linking CXX executable cmTC_91555
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91555.dir/link.txt --verbose=1
+        /bin/c++  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  CMakeFiles/cmTC_91555.dir/src.cxx.o -o cmTC_91555
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-96SY99'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckPIESupported.cmake:123 (cmake_check_linker_flag)"
+      - "core/CMakeLists.txt:48 (check_pie_supported)"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-or4How"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-or4How"
+    cmakeVariables:
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_C_LINK_PIE_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-or4How'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_5646e/fast
+        /bin/gmake  -f CMakeFiles/cmTC_5646e.dir/build.make CMakeFiles/cmTC_5646e.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-or4How'
+        Building C object CMakeFiles/cmTC_5646e.dir/src.c.o
+        /bin/cc -DCMAKE_C_LINK_PIE_SUPPORTED  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -fPIE -o CMakeFiles/cmTC_5646e.dir/src.c.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-or4How/src.c
+        Linking C executable cmTC_5646e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5646e.dir/link.txt --verbose=1
+        /bin/cc  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -fPIE -pie CMakeFiles/cmTC_5646e.dir/src.c.o -o cmTC_5646e
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-or4How'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckPIESupported.cmake:133 (cmake_check_linker_flag)"
+      - "core/CMakeLists.txt:48 (check_pie_supported)"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VHG0PC"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VHG0PC"
+    cmakeVariables:
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_C_LINK_NO_PIE_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VHG0PC'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_11f06/fast
+        /bin/gmake  -f CMakeFiles/cmTC_11f06.dir/build.make CMakeFiles/cmTC_11f06.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VHG0PC'
+        Building C object CMakeFiles/cmTC_11f06.dir/src.c.o
+        /bin/cc -DCMAKE_C_LINK_NO_PIE_SUPPORTED  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -fPIE -o CMakeFiles/cmTC_11f06.dir/src.c.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VHG0PC/src.c
+        Linking C executable cmTC_11f06
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11f06.dir/link.txt --verbose=1
+        /bin/cc  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -no-pie CMakeFiles/cmTC_11f06.dir/src.c.o -o cmTC_11f06
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VHG0PC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckPIESupported.cmake:123 (cmake_check_linker_flag)"
+      - "core/CMakeLists.txt:48 (check_pie_supported)"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VAnX9t"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VAnX9t"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_CXX_LINK_PIE_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VAnX9t'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_4b901/fast
+        /bin/gmake  -f CMakeFiles/cmTC_4b901.dir/build.make CMakeFiles/cmTC_4b901.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VAnX9t'
+        Building CXX object CMakeFiles/cmTC_4b901.dir/src.cxx.o
+        /bin/c++ -DCMAKE_CXX_LINK_PIE_SUPPORTED  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_4b901.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VAnX9t/src.cxx
+        Linking CXX executable cmTC_4b901
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b901.dir/link.txt --verbose=1
+        /bin/c++  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -fPIE -pie CMakeFiles/cmTC_4b901.dir/src.cxx.o -o cmTC_4b901
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-VAnX9t'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckPIESupported.cmake:133 (cmake_check_linker_flag)"
+      - "core/CMakeLists.txt:48 (check_pie_supported)"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-hKIsES"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-hKIsES"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_CXX_LINK_NO_PIE_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-hKIsES'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_8f07d/fast
+        /bin/gmake  -f CMakeFiles/cmTC_8f07d.dir/build.make CMakeFiles/cmTC_8f07d.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-hKIsES'
+        Building CXX object CMakeFiles/cmTC_8f07d.dir/src.cxx.o
+        /bin/c++ -DCMAKE_CXX_LINK_NO_PIE_SUPPORTED  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_8f07d.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-hKIsES/src.cxx
+        Linking CXX executable cmTC_8f07d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f07d.dir/link.txt --verbose=1
+        /bin/c++  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -no-pie CMakeFiles/cmTC_8f07d.dir/src.cxx.o -o cmTC_8f07d
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-hKIsES'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckLinkerFlag.cmake:44 (cmake_check_linker_flag)"
+      - "core/CMakeLists.txt:137 (check_linker_flag)"
+    checks:
+      - "Performing Test LD_SUPPORTS_AS_NEEDED"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-ydY2ca"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-ydY2ca"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "LD_SUPPORTS_AS_NEEDED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-ydY2ca'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_1d4bd/fast
+        /bin/gmake  -f CMakeFiles/cmTC_1d4bd.dir/build.make CMakeFiles/cmTC_1d4bd.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-ydY2ca'
+        Building CXX object CMakeFiles/cmTC_1d4bd.dir/src.cxx.o
+        /bin/c++ -DLD_SUPPORTS_AS_NEEDED  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_1d4bd.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-ydY2ca/src.cxx
+        Linking CXX executable cmTC_1d4bd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d4bd.dir/link.txt --verbose=1
+        /bin/c++  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -Wl,--as-needed CMakeFiles/cmTC_1d4bd.dir/src.cxx.o -o cmTC_1d4bd
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-ydY2ca'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "core/CMakeLists.txt:145 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test compiler_will_suggest_override"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-9teT1p"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-9teT1p"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "compiler_will_suggest_override"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-9teT1p'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_331c3/fast
+        /bin/gmake  -f CMakeFiles/cmTC_331c3.dir/build.make CMakeFiles/cmTC_331c3.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-9teT1p'
+        Building CXX object CMakeFiles/cmTC_331c3.dir/src.cxx.o
+        /bin/c++ -Dcompiler_will_suggest_override  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  -std=gnu++20 -fPIE   -Wsuggest-override -o CMakeFiles/cmTC_331c3.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-9teT1p/src.cxx
+        Linking CXX executable cmTC_331c3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_331c3.dir/link.txt --verbose=1
+        /bin/c++  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos  CMakeFiles/cmTC_331c3.dir/src.cxx.o -o cmTC_331c3
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-9teT1p'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "core/CMakeLists.txt:153 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test compiler_format_security"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-lZDU4v"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-lZDU4v"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "compiler_format_security"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-lZDU4v'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_a2c3f/fast
+        /bin/gmake  -f CMakeFiles/cmTC_a2c3f.dir/build.make CMakeFiles/cmTC_a2c3f.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-lZDU4v'
+        Building CXX object CMakeFiles/cmTC_a2c3f.dir/src.cxx.o
+        /bin/c++ -Dcompiler_format_security  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override  -std=gnu++20 -fPIE   -Wformat -o CMakeFiles/cmTC_a2c3f.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-lZDU4v/src.cxx
+        Linking CXX executable cmTC_a2c3f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2c3f.dir/link.txt --verbose=1
+        /bin/c++  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override  CMakeFiles/cmTC_a2c3f.dir/src.cxx.o -o cmTC_a2c3f
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-lZDU4v'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "core/CMakeLists.txt:157 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test compiler_error_format_security"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-WQ4Eks"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-WQ4Eks"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override -Wformat"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "compiler_error_format_security"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-WQ4Eks'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_bde9e/fast
+        /bin/gmake  -f CMakeFiles/cmTC_bde9e.dir/build.make CMakeFiles/cmTC_bde9e.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-WQ4Eks'
+        Building CXX object CMakeFiles/cmTC_bde9e.dir/src.cxx.o
+        /bin/c++ -Dcompiler_error_format_security  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override -Wformat  -std=gnu++20 -fPIE   -Werror=format-security -o CMakeFiles/cmTC_bde9e.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-WQ4Eks/src.cxx
+        Linking CXX executable cmTC_bde9e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bde9e.dir/link.txt --verbose=1
+        /bin/c++  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override -Wformat  CMakeFiles/cmTC_bde9e.dir/src.cxx.o -o cmTC_bde9e
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-WQ4Eks'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "core/CMakeLists.txt:165 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test compiler_has_invalid_offsetof"
+    directories:
+      source: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-wt0ZiJ"
+      binary: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-wt0ZiJ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override -Wformat -Werror=format-security"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_LINK_NO_PIE_SUPPORTED: "1"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CPM_modules;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/cmake;/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos/core/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "compiler_has_invalid_offsetof"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-wt0ZiJ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_0389f/fast
+        /bin/gmake  -f CMakeFiles/cmTC_0389f.dir/build.make CMakeFiles/cmTC_0389f.dir/build
+        gmake[1]: Entering directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-wt0ZiJ'
+        Building CXX object CMakeFiles/cmTC_0389f.dir/src.cxx.o
+        /bin/c++ -Dcompiler_has_invalid_offsetof  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override -Wformat -Werror=format-security  -std=gnu++20 -fPIE   -Winvalid-offsetof -o CMakeFiles/cmTC_0389f.dir/src.cxx.o -c /mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-wt0ZiJ/src.cxx
+        Linking CXX executable cmTC_0389f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0389f.dir/link.txt --verbose=1
+        /bin/c++  -fdebug-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -fmacro-prefix-map=/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/bareos=/usr/src/bareos -Wsuggest-override -Wformat -Werror=format-security  CMakeFiles/cmTC_0389f.dir/src.cxx.o -o cmTC_0389f
+        gmake[1]: Leaving directory '/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/CMakeFiles/CMakeScratch/TryCompile-wt0ZiJ'
+        
+      exitCode: 0
+...

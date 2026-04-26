@@ -1,0 +1,32 @@
+{
+  "name": "tapeguard-api",
+  "version": "2.0.0",
+  "description": "TapeGuard — backup multi-backend: nastro Bareos + Restic/S3. CRM e GLPI sync.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev":   "nodemon src/server.js",
+    "seed":  "node src/db/seed.js"
+  },
+  "dependencies": {
+    "express":           "^4.19.2",
+    "express-validator": "^7.0.1",
+    "knex":              "^3.1.0",
+    "pg":                "^8.11.5",
+    "jsonwebtoken":      "^9.0.2",
+    "bcrypt":            "^5.1.1",
+    "nodemailer":        "^6.9.13",
+    "web-push":          "^3.6.7",
+    "node-cron":         "^3.0.3",
+    "axios":             "^1.6.8",
+    "cors":              "^2.8.5",
+    "helmet":            "^7.1.0",
+    "morgan":            "^1.10.0",
+    "winston":           "^3.13.0",
+    "dotenv":            "^16.4.5",
+    "crypto":            "^1.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

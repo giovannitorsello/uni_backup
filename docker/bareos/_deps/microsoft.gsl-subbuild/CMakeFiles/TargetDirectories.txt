@@ -1,0 +1,3 @@
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/microsoft.gsl-populate.dir
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/edit_cache.dir
+/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/rebuild_cache.dir

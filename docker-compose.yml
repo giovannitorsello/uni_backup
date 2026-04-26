@@ -1,0 +1,201 @@
+# TapeGuard v2 — Gestione backup multi-backend
+# Bareos compilato da sorgente locale (Debian 13 / trixie)
+
+services:
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: tapeguard-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:     ${POSTGRES_USER:-tapeguard}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB:       tapeguard
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init-multi-db.sh:/docker-entrypoint-initdb.d/init-multi-db.sh:ro
+    networks:
+      - tapeguard-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-tapeguard}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Bareos Director — build da sorgente locale
+  # PREREQUISITO: make clone-bareos  (una sola volta)
+  # Prima build: 20-60 minuti. Le successive sono rapide (cache Docker)
+  bareos-director:
+    build:
+      context: ./docker/bareos
+      dockerfile: Dockerfile
+      target: director
+      args:
+        BUILD_JOBS: ${BUILD_JOBS:-4}
+    container_name: tapeguard-bareos-dir
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_HOST:           postgres
+      DB_PORT:           5432
+      DB_NAME:           bareos
+      DB_USER:           ${POSTGRES_USER:-tapeguard}
+      DB_PASSWORD:       ${POSTGRES_PASSWORD}
+      DIRECTOR_PASSWORD: ${BAREOS_DIRECTOR_PASSWORD}
+    volumes:
+      - ./docker/bareos/bareos-dir.d:/etc/bareos/bareos-dir.d
+      - bareos_data:/var/lib/bareos
+    networks:
+      - tapeguard-net
+    ports:
+      - "127.0.0.1:9101:9101"
+
+  bareos-storage:
+    build:
+      context: ./docker/bareos
+      dockerfile: Dockerfile
+      target: storage
+      args:
+        BUILD_JOBS: ${BUILD_JOBS:-4}
+    container_name: tapeguard-bareos-sd-01
+    restart: unless-stopped
+    depends_on:
+      - bareos-director
+    environment:
+      DIRECTOR_PASSWORD: ${BAREOS_DIRECTOR_PASSWORD}
+      SD_NAME:           bareos-sd-01
+    volumes:
+      - bareos_storage:/var/lib/bareos/storage
+    devices:
+      - /dev/nst0:/dev/nst0
+    cap_add:
+      - SYS_RAWIO
+    networks:
+      - tapeguard-net
+    ports:
+      - "127.0.0.1:9103:9103"
+
+  bareos-client:
+    build:
+      context: ./docker/bareos
+      dockerfile: Dockerfile
+      target: client
+      args:
+        BUILD_JOBS: ${BUILD_JOBS:-4}
+    container_name: tapeguard-bareos-fd
+    restart: unless-stopped
+    depends_on:
+      - bareos-director
+    environment:
+      DIRECTOR_PASSWORD: ${BAREOS_DIRECTOR_PASSWORD}
+      FD_NAME:           bareos-fd
+    networks:
+      - tapeguard-net
+    ports:
+      - "127.0.0.1:9102:9102"
+
+  minio:
+    image: minio/minio:latest
+    container_name: tapeguard-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER:     ${MINIO_ROOT_USER:-tapeguard}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - minio_data:/data
+    networks:
+      - tapeguard-net
+    ports:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: tapeguard-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      NODE_ENV:    production
+      PORT:        3000
+      DB_HOST:     postgres
+      DB_PORT:     5432
+      DB_NAME:     tapeguard
+      DB_USER:     ${POSTGRES_USER:-tapeguard}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      BAREOS_DB_HOST:     postgres
+      BAREOS_DB_NAME:     bareos
+      BAREOS_DB_USER:     ${POSTGRES_USER:-tapeguard}
+      BAREOS_DB_PASSWORD: ${POSTGRES_PASSWORD}
+      BCONSOLE_PASSWORD:  ${BAREOS_DIRECTOR_PASSWORD}
+      RESTIC_S3_ENDPOINT:   ${RESTIC_S3_ENDPOINT:-http://minio:9000}
+      RESTIC_S3_ACCESS_KEY: ${RESTIC_S3_ACCESS_KEY:-tapeguard}
+      RESTIC_S3_SECRET_KEY: ${RESTIC_S3_SECRET_KEY}
+      RESTIC_CACHE_DIR:     /restic-cache
+      JWT_SECRET:       ${JWT_SECRET}
+      JWT_EXPIRES_IN:   8h
+      SMTP_HOST:  ${SMTP_HOST}
+      SMTP_PORT:  ${SMTP_PORT:-587}
+      SMTP_USER:  ${SMTP_USER}
+      SMTP_PASS:  ${SMTP_PASS}
+      SMTP_FROM:  ${SMTP_FROM:-noreply@tapeguard.local}
+      VAPID_PUBLIC_KEY:  ${VAPID_PUBLIC_KEY}
+      VAPID_PRIVATE_KEY: ${VAPID_PRIVATE_KEY}
+      VAPID_SUBJECT:     ${VAPID_SUBJECT:-mailto:admin@tapeguard.local}
+      ALERT_DAYS_BEFORE: ${ALERT_DAYS_BEFORE:-3}
+      ALERT_CRON:        ${ALERT_CRON:-0 7 * * *}
+      CRM_API_URL:        ${CRM_API_URL}
+      CRM_API_KEY:        ${CRM_API_KEY}
+      CRM_WEBHOOK_SECRET: ${CRM_WEBHOOK_SECRET}
+      GLPI_URL:        ${GLPI_URL}
+      GLPI_APP_TOKEN:  ${GLPI_APP_TOKEN}
+      GLPI_USER_TOKEN: ${GLPI_USER_TOKEN}
+    volumes:
+      - ./backend/logs:/app/logs
+      - restic_cache:/restic-cache
+    networks:
+      - tapeguard-net
+
+  ui:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: tapeguard-ui
+    restart: unless-stopped
+    depends_on:
+      - api
+    networks:
+      - tapeguard-net
+
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: tapeguard-nginx
+    restart: unless-stopped
+    depends_on:
+      - ui
+      - api
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/certs:/etc/nginx/certs:ro
+    networks:
+      - tapeguard-net
+
+volumes:
+  postgres_data:
+  bareos_data:
+  bareos_storage:
+  minio_data:
+  restic_cache:
+
+networks:
+  tapeguard-net:
+    driver: bridge

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/microsoft.gsl-populate"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/microsoft.gsl-populate.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/CMakeFiles/microsoft.gsl-populate-complete.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-build.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-configure.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-download.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-install.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-patch.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-test.rule"
+		},
+		{
+			"file" : "/mnt/storage1/Documenti/Attivita/WIFINETCOM_SRL/SviluppoSoftware/TapeBackup/tapeguard/docker/bareos/_deps/microsoft.gsl-subbuild/microsoft.gsl-populate-prefix/src/microsoft.gsl-populate-stamp/microsoft.gsl-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"microsoft.gsl-populate"
+		],
+		"name" : "microsoft.gsl-populate"
+	}
+}
