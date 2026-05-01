@@ -19,8 +19,8 @@ set -euo pipefail
 
 MHVTL_DIR="${MHVTL_DIR:-/opt/mhvtl}"
 MHVTL_CONF="${MHVTL_CONF:-/etc/mhvtl}"
-MHVTL_LIBRARIES="${MHVTL_LIBRARIES:-1}"
-MHVTL_DRIVES="${MHVTL_DRIVES:-2}"
+MHVTL_LIBRARIES="${MHVTL_LIBRARIES:-2}"
+MHVTL_DRIVES="${MHVTL_DRIVES:-4}"
 MHVTL_CLEAN="${MHVTL_CLEAN:-no}"
 
 log()  { echo "[mhvtl-stop] $(date '+%H:%M:%S') $*"; }
@@ -102,14 +102,14 @@ fi
 # 2b. Rimuovi lock files
 # ---------------------------------------------------------------
 log "Rimozione lock files mhvtl..."
-find /var/lock /tmp /run -name "*mhvtl*" -o -name "*vtl*q*" \
+find /var/lock /tmp -name "*mhvtl*" -o -name "*vtl*q*" \
   2>/dev/null | while read F; do
-  rm -f "${F}" && log2 "Rimosso: ${F}"
+  rm -f "${F}" || true && log2 "Rimosso: ${F}" 
 done
 find "${MHVTL_DIR}" "${MHVTL_CONF}" \
   -name "*.lock" -o -name "*.pid" \
   2>/dev/null | while read F; do
-  rm -f "${F}" && log2 "Rimosso: ${F}"
+  rm -f "${F}" || true && log2 "Rimosso: ${F}"
 done
 
 # ---------------------------------------------------------------
