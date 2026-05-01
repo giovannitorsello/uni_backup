@@ -169,7 +169,10 @@ log "Uso tool: ${GENLIBCMD}"
 # Rimuovi il file esistente prima di rigenerare
 rm -f "${MHVTL_DIR}/library_contents.${LIB_Q}"
 
-"${GENLIBCMD}" C "${MHVTL_CONF}" -D "${MHVTL_DIR}" -f
+"${GENLIBCMD}" \
+  -C "${MHVTL_CONF}" \
+  -D "${MHVTL_DIR}" \
+  -f
 
 # Verifica nella directory corretta
 if [ ! -f "${MHVTL_DIR}/library_contents.${LIB_Q}" ]; then
@@ -247,25 +250,29 @@ sleep 2
 # ---------------------------------------------------------------
 # 7. Verifica finale
 # ---------------------------------------------------------------
+# ---------------------------------------------------------------
+# 6. Verifica finale
+# ---------------------------------------------------------------
 log "Verifica device creati..."
-if ! lsscsi -g | grep -i mhvtl; then
-  log "ERRORE: nessun device mhvtl visibile dopo l'avvio."
+
+TAPES_FOUND=$(lsscsi -g | grep -i mhvtl | grep -i tape | wc -l)
+CHANGER_FOUND=$(lsscsi -g | grep -i mhvtl | grep -i mediumx | wc -l)
+
+if [ "${TAPES_FOUND}" -eq 0 ]; then
+  log "ERRORE: nessun drive mhvtl visibile dopo l'avvio."
   log "  journalctl -n 50 | grep -i vtl"
   exit 1
 fi
 
-CHANGER=$(lsscsi -g | grep -i mediumx | awk '{print $NF}' | head -1)
+lsscsi -g | grep -i mhvtl || true
+
 log ""
 log "=== mhvtl pronto ==="
-log "  Robot changer : ${CHANGER}"
-for i in $(seq 1 ${MHVTL_DRIVES}); do
-  DEV=$(lsscsi -g | grep -i tape | awk '{print $(NF-1)}' | sed -n "${i}p")
-  # Converti /dev/st0 → /dev/nst0 (no-rewind, quello usato da Bareos)
-  NST=$(echo "${DEV}" | sed 's|/dev/st|/dev/nst|')
-  log "  Drive ${i}       : ${DEV} (no-rewind: ${NST})"
-done
-log ""
-log "Aggiorna il .env con questi valori:"
-log "  CHANGER_DEVICE=${CHANGER}"
-FIRST_NST=$(lsscsi -g | grep -i tape | awk '{print $(NF-1)}' | head -1 | sed 's|/dev/st|/dev/nst|')
-log "  TAPE_DEVICE=${FIRST_NST}"
+
+if [ "${CHANGER_FOUND}" -gt 0 ]; then
+  CHANGER=$(lsscsi -g | grep -i mediumx | awk '{print $NF}' | head -1)
+  log "  Robot changer : ${CHANGER}"
+else
+  log "  Robot changer : non visibile in lsscsi (potrebbe servire riavvio)"
+fi
+

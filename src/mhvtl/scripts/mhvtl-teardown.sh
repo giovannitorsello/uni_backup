@@ -92,6 +92,9 @@ fi
 # ---------------------------------------------------------------
 # 3. Rimuovi /dev/mhvtl
 # ---------------------------------------------------------------
+# ---------------------------------------------------------------
+# 3. Rimuovi /dev/mhvtl
+# ---------------------------------------------------------------
 log "Rimozione device node /dev/mhvtl..."
 if [ -c /dev/mhvtl ]; then
   rm -f /dev/mhvtl
@@ -102,19 +105,56 @@ fi
 
 # ---------------------------------------------------------------
 # 4. Scarica il modulo kernel
+#    I device SCSI mhvtl devono essere rimossi PRIMA di rmmod
+#    altrimenti il modulo risulta "in uso" e rmmod fallisce
 # ---------------------------------------------------------------
 log "Scaricamento modulo kernel mhvtl..."
 if lsmod | grep -q mhvtl; then
-  # Attendi che i device SCSI si deregistrino
-  sleep 1
+
+  # Rimuovi esplicitamente i device SCSI ancora registrati
+  SCSI_HOSTS=$(ls /sys/bus/scsi/drivers/mhvtl/ 2>/dev/null || true)
+  if [ -n "${SCSI_HOSTS}" ]; then
+    log "Deregistrazione device SCSI mhvtl..."
+    for HOST in /sys/class/scsi_host/host*/; do
+      PROC=$(cat "${HOST}proc_name" 2>/dev/null || true)
+      if [ "${PROC}" = "mhvtl" ]; then
+        HOSTNUM=$(basename "${HOST}" | sed 's/host//')
+        log "  Rimozione scsi host${HOSTNUM}..."
+        echo 1 > "${HOST}scan" 2>/dev/null || true
+      fi
+    done
+    sleep 1
+  fi
+
+  # Scarica il driver tape SCSI se caricato — rilascia i device /dev/st*
+  if lsmod | grep -q "^st "; then
+    rmmod st 2>/dev/null && log "Modulo st scaricato." || true
+  fi
+
+  # Forza rmmod con -f se necessario
   if rmmod mhvtl 2>/dev/null; then
     log "Modulo scaricato."
   else
-    warn "Impossibile scaricare il modulo — potrebbe essere ancora in uso."
-    warn "Riprova manualmente: sudo rmmod mhvtl"
+    log "rmmod normale fallito — tento con -f (force)..."
+    if rmmod -f mhvtl 2>/dev/null; then
+      log "Modulo scaricato forzatamente."
+    else
+      log "WARN: impossibile scaricare il modulo."
+      log "      Riavvia il sistema per liberare i device SCSI."
+    fi
   fi
 else
   log "Modulo già scaricato."
+fi
+
+# Verifica finale device SCSI
+sleep 1
+RESIDUI=$(lsscsi -g 2>/dev/null | grep -i mhvtl | wc -l)
+if [ "${RESIDUI}" -gt 0 ]; then
+  log "WARN: ${RESIDUI} device mhvtl ancora visibili — richiesto riavvio."
+  log "      sudo reboot"
+else
+  log "Device SCSI mhvtl rimossi correttamente."
 fi
 
 # ---------------------------------------------------------------

@@ -38,68 +38,6 @@ make seed                   # admin + dati esempio
 # → https://localhost  (admin / TapeGuard2024! — cambia subito!)
 ```
 
-## Struttura del progetto
-
-```
-tapeguard/
-├── docker-compose.yml
-├── .env.example
-├── Makefile
-├── README.md
-│
-├── backend/
-│   ├── Dockerfile              # Node 20 + restic binary
-│   ├── package.json
-│   └── src/
-│       ├── server.js
-│       ├── db/
-│       │   ├── connection.js   # Knex + migrazioni auto (14 tabelle)
-│       │   └── seed.js
-│       ├── routes/
-│       │   ├── auth.js
-│       │   ├── clienti.js      # CRUD + POST /:id/rotazione
-│       │   ├── cassette.js
-│       │   ├── rotazioni.js
-│       │   ├── dispositivi.js          # lettori nastro fornitore
-│       │   ├── dispositiviCliente.js   # anagrafica device clienti
-│       │   ├── restic.js               # operazioni restic/S3
-│       │   ├── bareos.js               # proxy catalogo + bconsole
-│       │   ├── alert.js
-│       │   └── sync.js                 # CRM webhook + GLPI
-│       ├── services/
-│       │   ├── rotazioneService.js     # logica rotazione 3 cassette
-│       │   ├── alertService.js         # email + web push
-│       │   ├── bareosService.js        # Bareos catalog + bconsole
-│       │   ├── resticService.js        # wrapper CLI restic
-│       │   ├── crmSyncService.js       # sync CRM esterno
-│       │   └── glpiService.js          # GLPI REST API
-│       ├── scheduler/
-│       │   └── index.js        # node-cron alert + ticket GLPI
-│       └── utils/
-│           ├── auth.js         # JWT middleware
-│           └── logger.js       # Winston
-│
-├── frontend/
-│   ├── Dockerfile
-│   ├── quasar.config.js
-│   └── src/
-│       ├── boot/axios.js
-│       ├── stores/backup.js    # Pinia store
-│       └── pages/
-│           ├── DashboardPage.vue
-│           ├── ClientiPage.vue
-│           ├── DispositiviClientePage.vue
-│           └── SyncPage.vue
-│
-└── docker/
-    ├── postgres/init-multi-db.sh
-    ├── bareos/
-    │   ├── bareos-dir.conf
-    │   ├── bareos-sd.conf
-    │   └── bareos-dir.d/cliente-acme.conf   ← template
-    └── nginx/nginx.conf
-```
-
 ## API principali
 
 ```

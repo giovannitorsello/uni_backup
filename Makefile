@@ -191,13 +191,13 @@ mhvtl-init:
 	 MHVTL_SLOTS=$(MHVTL_SLOTS) \
 	 MHVTL_TAPES=$(MHVTL_TAPES) \
 	 MHVTL_MEDIA=$(MHVTL_MEDIA) \
-	 bash src/mhvtl/scripts/mhvtl-tearinit.sh
+	 sudo bash src/mhvtl/scripts/mhvtl-tearinit.sh
 
 mhvtl-stop:
-	@bash src/mhvtl/scripts/mhvtl-teardown.sh
+	@sudo bash src/mhvtl/scripts/mhvtl-teardown.sh
 
 mhvtl-clean:
-	@MHVTL_CLEAN=yes bash src/mhvtl/scripts/mhvtl-down.sh
+	@MHVTL_CLEAN=yes sudo bash src/mhvtl/scripts/mhvtl-down.sh
 
 clean-all:
 	@rm -rf ./docker/postgres
