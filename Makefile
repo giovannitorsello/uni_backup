@@ -1,7 +1,10 @@
 .PHONY: help clone-bareos up down logs seed ps restart-api gen-certs gen-vapid backup-db bareos-reload bareos-status
 
+-include .env
+export
+
 BAREOS_GIT_TAG ?= bareos-25
-BUILD_JOBS      ?= 4
+BUILD_JOBS      ?= 8
 
 help:
 	@echo ""
@@ -90,17 +93,7 @@ seed:
 	@echo "  Utente:  admin / ueb2024!  ← CAMBIA SUBITO"
 	@echo ""
 
--include .env
-export
 
-APP_DOMAIN ?= 
-CERTS_DIR  := docker/certs
-
--include .env
-export
-
-APP_DOMAIN ?= localhost
-CERTS_DIR  ?= docker/certs
 
 # ─── CA ──────────────────────────────────────────────────────────────────────
 gen-ca:
@@ -179,26 +172,35 @@ bareos-status:
 
 
 # ── mhvtl ────────────────────────────────────────────────────
-MHVTL_DIR    ?= /opt/mhvtl
-MHVTL_DRIVES ?= 2
-MHVTL_SLOTS  ?= 20
-MHVTL_TAPES  ?= 10
-MHVTL_MEDIA  ?= LTO8
-
-mhvtl-init:
-	@MHVTL_DIR=$(MHVTL_DIR) \
-	 MHVTL_DRIVES=$(MHVTL_DRIVES) \
-	 MHVTL_SLOTS=$(MHVTL_SLOTS) \
-	 MHVTL_TAPES=$(MHVTL_TAPES) \
-	 MHVTL_MEDIA=$(MHVTL_MEDIA) \
-	 sudo bash src/mhvtl/scripts/mhvtl-tearinit.sh
-
 mhvtl-stop:
-	@sudo bash src/mhvtl/scripts/mhvtl-teardown.sh
+	@sudo src/mhvtl/scripts/mhvtl-teardown.sh || true
 
 mhvtl-clean:
-	@MHVTL_CLEAN=yes sudo bash src/mhvtl/scripts/mhvtl-down.sh
+	@sudo MHVTL_CLEAN=yes src/mhvtl/scripts/mhvtl-teardown.sh || true
 
+mhvtl-init:
+	@sudo src/mhvtl/scripts/mhvtl-tearinit.sh || true
+
+mhvtl-status:
+	@echo "=== Device SCSI ==="
+	@lsscsi -g | grep -i mhvtl || echo "  nessun device mhvtl"
+	@echo ""
+	@echo "=== Processi attivi ==="
+	@ps aux | grep -E "vtl(library|tape)" | grep -v grep || echo "  nessun processo vtl"
+	@echo ""
+	@echo "=== Modulo kernel ==="
+	@lsmod | grep mhvtl || echo "  modulo non caricato"
+	@echo ""
+	@echo "=== Cartucce per libreria ==="
+	@for lib in $(MHVTL_DIR)/[0-9]*/; do \
+	  echo "  Libreria $$(basename $$lib): $$(ls $$lib | wc -l) cartucce"; \
+	  ls $$lib; \
+	done
+	@echo ""
+	@echo "=== library_contents ==="
+	@ls -la $(MHVTL_DIR)/library_contents.* 2>/dev/null || echo "  nessun library_contents"
+
+# ── Pulizia completa ────────────────────────────────────────────────────
 clean-all:
 	@rm -rf ./docker/postgres
 	@rm -rf ./docker/bareos

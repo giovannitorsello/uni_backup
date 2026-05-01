@@ -33,58 +33,72 @@ Catalog {
 # ----------------------------------------------------------------
 # Storage Daemon
 # ----------------------------------------------------------------
+# ── Storage Daemon — Libreria 1 ───────────────────────────────
 Storage {
-  Name     = bareos-sd-01
-  Address  = bareos-storage
-  SD Port  = 9103
-  Password = "${BAREOS_DIRECTOR_PASSWORD}"
-  Device   = ProductionLibrary    # override in dev dall'entrypoint-sd
-  Media Type = LTO
+  Name      = mhvtl-Library-1
+  Address   = bareos-storage
+  SD Port   = 9103
+  Password  = "${BAREOS_DIRECTOR_PASSWORD}"
+  Device    = mhvtl-Library-1
+  Media Type = LTO8-L1
 }
 
-# ----------------------------------------------------------------
-# Pool nastri — definizioni base
-# Ogni cliente riceverà un Pool dedicato via API
-# ----------------------------------------------------------------
-Pool {
-  Name          = Scratch
-  Pool Type     = Scratch
-  Recycle       = yes
-  AutoPrune     = yes
+# ── Storage Daemon — Libreria 2 ───────────────────────────────
+Storage {
+  Name      = mhvtl-Library-2
+  Address   = bareos-storage
+  SD Port   = 9103
+  Password  = "${BAREOS_DIRECTOR_PASSWORD}"
+  Device    = mhvtl-Library-2
+  Media Type = LTO8-L2
 }
 
+# ── Pool per Libreria 1 ───────────────────────────────────────
 Pool {
-  Name            = Full
+  Name            = Pool-L1-Full
   Pool Type       = Backup
+  Storage         = mhvtl-Library-1
   Recycle         = yes
   AutoPrune       = yes
   Volume Retention = 365 days
-  Maximum Volume Bytes = 12T      # capienza LTO-8 nativo
-  Maximum Volumes = 100
-  Label Format    = "Full-"
+  Maximum Volume Bytes = 12T
+  Label Format    = "L1-Full-"
 }
 
 Pool {
-  Name            = Incremental
+  Name            = Pool-L1-Incremental
   Pool Type       = Backup
+  Storage         = mhvtl-Library-1
   Recycle         = yes
   AutoPrune       = yes
   Volume Retention = 30 days
   Maximum Volume Bytes = 12T
-  Maximum Volumes = 200
-  Label Format    = "Inc-"
+  Label Format    = "L1-Inc-"
+}
+
+# ── Pool per Libreria 2 ───────────────────────────────────────
+Pool {
+  Name            = Pool-L2-Full
+  Pool Type       = Backup
+  Storage         = mhvtl-Library-2
+  Recycle         = yes
+  AutoPrune       = yes
+  Volume Retention = 365 days
+  Maximum Volume Bytes = 12T
+  Label Format    = "L2-Full-"
 }
 
 Pool {
-  Name            = Differential
+  Name            = Pool-L2-Incremental
   Pool Type       = Backup
+  Storage         = mhvtl-Library-2
   Recycle         = yes
   AutoPrune       = yes
-  Volume Retention = 90 days
+  Volume Retention = 30 days
   Maximum Volume Bytes = 12T
-  Maximum Volumes = 100
-  Label Format    = "Diff-"
+  Label Format    = "L2-Inc-"
 }
+
 
 # ----------------------------------------------------------------
 # Schedule di default

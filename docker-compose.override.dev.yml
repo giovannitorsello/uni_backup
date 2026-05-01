@@ -18,8 +18,12 @@ services:
     depends_on:
       - mhvtl
     devices:
-      - "${CHANGER_DEVICE:-/dev/sg0}:${CHANGER_DEVICE:-/dev/sg0}"
-      - "${TAPE_DEVICE:-/dev/nst0}:${TAPE_DEVICE:-/dev/nst0}"
+      - "${CHANGER_DEVICE}:${CHANGER_DEVICE}"
+      - "${CHANGER_DEVICE_2}:${CHANGER_DEVICE_2}"
+      - "${TAPE_DEVICE}:${TAPE_DEVICE}"
+      - "${TAPE_DEVICE_2}:${TAPE_DEVICE_2}"
+      - "${TAPE_DEVICE_3}:${TAPE_DEVICE_3}"
+      - "${TAPE_DEVICE_4}:${TAPE_DEVICE_4}"
     cap_add:
       - SYS_RAWIO
 
