@@ -1,38 +1,73 @@
-# TapeGuard v2 — Gestione backup multi-backend
+# Uni Easy Backup v2 — Gestione backup multi-backend
 # Bareos compilato da sorgente locale (Debian 13 / trixie)
 
 services:
 
+  traefik:
+    image: traefik:v3.2
+    container_name: ueb-traefik
+    restart: unless-stopped
+    command:
+      - "--api.dashboard=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=ueb-net"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.websecure.address=:443"
+      # Let's Encrypt — sostituisci con il tuo resolver se hai un CA interno
+      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.email=${ACME_EMAIL:-admin@ueb.local}"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+      # Dashboard Traefik — raggiungibile su https://${TRAEFIK_DOMAIN}/dashboard/
+      - "--api.insecure=false"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik_certs:/letsencrypt
+    networks:
+      - ueb-net
+    labels:
+      - "traefik.enable=true"
+      # Dashboard Traefik protetto da BasicAuth
+      - "traefik.http.routers.traefik-dashboard.rule=Host(`${TRAEFIK_DOMAIN:-traefik.ueb.local}`)"
+      - "traefik.http.routers.traefik-dashboard.entrypoints=websecure"
+      - "traefik.http.routers.traefik-dashboard.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.traefik-dashboard.service=api@internal"
+      - "traefik.http.routers.traefik-dashboard.middlewares=traefik-auth"
+      # htpasswd: genera con: echo $(htpasswd -nB admin) | sed -e s/\\$/\\$\\$/g
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_DASHBOARD_USERS}"
+
   postgres:
     image: postgres:15-alpine
-    container_name: tapeguard-postgres
+    container_name: ueb-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER:     ${POSTGRES_USER:-tapeguard}
+      POSTGRES_USER:     ${POSTGRES_USER:-ueb}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB:       tapeguard
+      POSTGRES_DB:       ueb
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./docker/postgres/init-multi-db.sh:/docker-entrypoint-initdb.d/init-multi-db.sh:ro
     networks:
-      - tapeguard-net
+      - ueb-net
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-tapeguard}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ueb}"]
       interval: 10s
       timeout: 5s
       retries: 5
 
-  # Bareos Director — build da sorgente locale
-  # PREREQUISITO: make clone-bareos  (una sola volta)
-  # Prima build: 20-60 minuti. Le successive sono rapide (cache Docker)
   bareos-director:
     build:
-      context: ./docker/bareos
+      context: ./src/bareos
       dockerfile: Dockerfile
       target: director
       args:
         BUILD_JOBS: ${BUILD_JOBS:-4}
-    container_name: tapeguard-bareos-dir
+    container_name: ueb-bareos-dir
     restart: unless-stopped
     depends_on:
       postgres:
@@ -41,25 +76,25 @@ services:
       DB_HOST:           postgres
       DB_PORT:           5432
       DB_NAME:           bareos
-      DB_USER:           ${POSTGRES_USER:-tapeguard}
+      DB_USER:           ${POSTGRES_USER:-ueb}
       DB_PASSWORD:       ${POSTGRES_PASSWORD}
       DIRECTOR_PASSWORD: ${BAREOS_DIRECTOR_PASSWORD}
     volumes:
       - ./docker/bareos/bareos-dir.d:/etc/bareos/bareos-dir.d
       - bareos_data:/var/lib/bareos
     networks:
-      - tapeguard-net
+      - ueb-net
     ports:
       - "127.0.0.1:9101:9101"
 
   bareos-storage:
     build:
-      context: ./docker/bareos
+      context: ./src/bareos
       dockerfile: Dockerfile
       target: storage
       args:
         BUILD_JOBS: ${BUILD_JOBS:-4}
-    container_name: tapeguard-bareos-sd-01
+    container_name: ueb-bareos-sd-01
     restart: unless-stopped
     depends_on:
       - bareos-director
@@ -68,23 +103,19 @@ services:
       SD_NAME:           bareos-sd-01
     volumes:
       - bareos_storage:/var/lib/bareos/storage
-    devices:
-      - /dev/nst0:/dev/nst0
-    cap_add:
-      - SYS_RAWIO
     networks:
-      - tapeguard-net
+      - ueb-net
     ports:
       - "127.0.0.1:9103:9103"
 
   bareos-client:
     build:
-      context: ./docker/bareos
+      context: ./src/bareos
       dockerfile: Dockerfile
       target: client
       args:
         BUILD_JOBS: ${BUILD_JOBS:-4}
-    container_name: tapeguard-bareos-fd
+    container_name: ueb-bareos-fd
     restart: unless-stopped
     depends_on:
       - bareos-director
@@ -92,50 +123,89 @@ services:
       DIRECTOR_PASSWORD: ${BAREOS_DIRECTOR_PASSWORD}
       FD_NAME:           bareos-fd
     networks:
-      - tapeguard-net
+      - ueb-net
     ports:
       - "127.0.0.1:9102:9102"
 
+  # ─── Bareos WebUI ────────────────────────────────────────────────────────────
+  # Interfaccia web di amministrazione Bareos
+  # Raggiungibile su https://${BAREOS_WEBUI_DOMAIN:-bareos.ueb.local}
+  #bareos-webui:
+  #  image: bstoeger/bareos-webui:latest   # oppure bareos/bareos-webui se disponibile
+  #  container_name: ueb-bareos-webui
+  #  restart: unless-stopped
+  #  depends_on:
+  #    - bareos-director
+  #  environment:
+  #    BAREOS_DIRECTOR_HOST:     bareos-director
+  #    BAREOS_DIRECTOR_PORT:     9101
+  #    BAREOS_DIRECTOR_NAME:     bareos-dir
+  #    BAREOS_DIRECTOR_PASSWORD: ${BAREOS_DIRECTOR_PASSWORD}
+  #    # Imposta la timezone coerente con il Director
+  #    TZ: ${TZ:-Europe/Rome}
+  #  volumes:
+  #    - ./docker/bareos-webui/directors.ini:/etc/bareos-webui/directors.ini:ro
+  #  networks:
+  #    - ueb-net
+  #  labels:
+  #    - "traefik.enable=true"
+  #    - "traefik.http.routers.bareos-webui.rule=Host(`${BAREOS_WEBUI_DOMAIN:-bareos.ueb.local}`)"
+  #    - "traefik.http.routers.bareos-webui.entrypoints=websecure"
+  #    - "traefik.http.routers.bareos-webui.tls.certresolver=letsencrypt"
+  #    - "traefik.http.services.bareos-webui.loadbalancer.server.port=80"
+  #    # Middleware: header di sicurezza per pannello admin
+  #    - "traefik.http.routers.bareos-webui.middlewares=bareos-secure-headers"
+  #    - "traefik.http.middlewares.bareos-secure-headers.headers.stsSeconds=31536000"
+  #    - "traefik.http.middlewares.bareos-secure-headers.headers.stsIncludeSubdomains=true"
+  #    - "traefik.http.middlewares.bareos-secure-headers.headers.contentTypeNosniff=true"
+  #    - "traefik.http.middlewares.bareos-secure-headers.headers.frameDeny=true"
+
   minio:
     image: minio/minio:latest
-    container_name: tapeguard-minio
+    container_name: ueb-minio
     restart: unless-stopped
     command: server /data --console-address ":9001"
     environment:
-      MINIO_ROOT_USER:     ${MINIO_ROOT_USER:-tapeguard}
+      MINIO_ROOT_USER:     ${MINIO_ROOT_USER:-ueb}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
     volumes:
       - minio_data:/data
     networks:
-      - tapeguard-net
+      - ueb-net
     ports:
       - "127.0.0.1:9000:9000"
       - "127.0.0.1:9001:9001"
 
   api:
     build:
-      context: ./backend
+      context: ./src/backend
       dockerfile: Dockerfile
-    container_name: tapeguard-api
+    container_name: ueb-api
     restart: unless-stopped
     depends_on:
       postgres:
         condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.rule=Host(`${API_DOMAIN:-api.ueb.local}`)"
+      - "traefik.http.routers.api.entrypoints=websecure"
+      - "traefik.http.routers.api.tls.certresolver=letsencrypt"
+      - "traefik.http.services.api.loadbalancer.server.port=3000"        
     environment:
       NODE_ENV:    production
       PORT:        3000
       DB_HOST:     postgres
       DB_PORT:     5432
-      DB_NAME:     tapeguard
-      DB_USER:     ${POSTGRES_USER:-tapeguard}
+      DB_NAME:     ueb
+      DB_USER:     ${POSTGRES_USER:-ueb}
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       BAREOS_DB_HOST:     postgres
       BAREOS_DB_NAME:     bareos
-      BAREOS_DB_USER:     ${POSTGRES_USER:-tapeguard}
+      BAREOS_DB_USER:     ${POSTGRES_USER:-ueb}
       BAREOS_DB_PASSWORD: ${POSTGRES_PASSWORD}
       BCONSOLE_PASSWORD:  ${BAREOS_DIRECTOR_PASSWORD}
       RESTIC_S3_ENDPOINT:   ${RESTIC_S3_ENDPOINT:-http://minio:9000}
-      RESTIC_S3_ACCESS_KEY: ${RESTIC_S3_ACCESS_KEY:-tapeguard}
+      RESTIC_S3_ACCESS_KEY: ${RESTIC_S3_ACCESS_KEY:-ueb}
       RESTIC_S3_SECRET_KEY: ${RESTIC_S3_SECRET_KEY}
       RESTIC_CACHE_DIR:     /restic-cache
       JWT_SECRET:       ${JWT_SECRET}
@@ -144,10 +214,10 @@ services:
       SMTP_PORT:  ${SMTP_PORT:-587}
       SMTP_USER:  ${SMTP_USER}
       SMTP_PASS:  ${SMTP_PASS}
-      SMTP_FROM:  ${SMTP_FROM:-noreply@tapeguard.local}
+      SMTP_FROM:  ${SMTP_FROM:-noreply@ueb.local}
       VAPID_PUBLIC_KEY:  ${VAPID_PUBLIC_KEY}
       VAPID_PRIVATE_KEY: ${VAPID_PRIVATE_KEY}
-      VAPID_SUBJECT:     ${VAPID_SUBJECT:-mailto:admin@tapeguard.local}
+      VAPID_SUBJECT:     ${VAPID_SUBJECT:-mailto:admin@ueb.local}
       ALERT_DAYS_BEFORE: ${ALERT_DAYS_BEFORE:-3}
       ALERT_CRON:        ${ALERT_CRON:-0 7 * * *}
       CRM_API_URL:        ${CRM_API_URL}
@@ -160,42 +230,35 @@ services:
       - ./backend/logs:/app/logs
       - restic_cache:/restic-cache
     networks:
-      - tapeguard-net
+      - ueb-net
 
   ui:
     build:
-      context: ./frontend
+      context: ./src/frontend
       dockerfile: Dockerfile
-    container_name: tapeguard-ui
+    container_name: ueb-ui
     restart: unless-stopped
     depends_on:
       - api
     networks:
-      - tapeguard-net
+      - ueb-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ui.rule=Host(`${APP_DOMAIN:-app.ueb.local}`)"
+      - "traefik.http.routers.ui.entrypoints=websecure"
+      - "traefik.http.routers.ui.tls.certresolver=letsencrypt"
+      - "traefik.http.services.ui.loadbalancer.server.port=3001"  # porta del tuo server frontend
 
-  nginx:
-    image: nginx:1.25-alpine
-    container_name: tapeguard-nginx
-    restart: unless-stopped
-    depends_on:
-      - ui
-      - api
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./docker/nginx/certs:/etc/nginx/certs:ro
-    networks:
-      - tapeguard-net
 
+  
 volumes:
   postgres_data:
   bareos_data:
   bareos_storage:
   minio_data:
   restic_cache:
+  traefik_certs:    # Archivia acme.json con i certificati Let's Encrypt
 
 networks:
-  tapeguard-net:
+  ueb-net:
     driver: bridge

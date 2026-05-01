@@ -31,7 +31,9 @@ Ciclo (7 / 15 / 30 giorni, per cliente):
 cp .env.example .env        # compila TUTTI i campi
 make gen-certs              # SSL self-signed per sviluppo
 make gen-vapid              # chiavi VAPID → copia in .env
-make up                     # build + avvio
+make clone-bareos           # clona i sorgenti bareos e seleziona la versione scelta nel .env
+make up-dev                 # build + avvio dev mode
+make up-prod                # build + avvio prod mode
 make seed                   # admin + dati esempio
 # → https://localhost  (admin / TapeGuard2024! — cambia subito!)
 ```

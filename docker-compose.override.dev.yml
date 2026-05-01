@@ -1,0 +1,27 @@
+# docker-compose.override.yml  (sviluppo — git-ignored)
+services:  
+  services:
+  mhvtl:
+    build:
+      context: ./docker/mhvtl
+      dockerfile: Dockerfile
+    container_name: tapeguard-mhvtl
+    privileged: true
+    volumes:
+      - /lib/modules:/lib/modules:ro   # kernel modules dall'host
+      - /usr/src:/usr/src:ro           # kernel headers dall'host
+      - mhvtl_data:/opt/mhvtl
+    networks:
+      - ueb-net
+
+  bareos-storage:
+    depends_on:
+      - mhvtl
+    devices:
+      - "${CHANGER_DEVICE:-/dev/sg0}:${CHANGER_DEVICE:-/dev/sg0}"
+      - "${TAPE_DEVICE:-/dev/nst0}:${TAPE_DEVICE:-/dev/nst0}"
+    cap_add:
+      - SYS_RAWIO
+
+volumes:
+  mhvtl_data:

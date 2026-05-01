@@ -1,0 +1,8 @@
+# docker-compose.prod.yml  (produzione — esplicito)
+services:
+  bareos-storage:
+    devices:
+      - "${CHANGER_DEVICE}:${CHANGER_DEVICE}"   # robot changer
+      - "${TAPE_DEVICE}:${TAPE_DEVICE}"          # drive nastro
+    cap_add:
+      - SYS_RAWIO
