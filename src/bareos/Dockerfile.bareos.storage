@@ -11,6 +11,16 @@ RUN apt-get update && apt-get install -y \
     lsscsi \
     && rm -rf /var/lib/apt/lists/*
 
+# 2. Impostazione della variabile d'ambiente per il container
+ENV MTX=/usr/sbin/mtx
+
+# 3. Configurazione automatica dello script mtx-changer
+# Questo assicura che lo script trovi sempre il binario, 
+# scrivendo la variabile nel file che Bareos legge ad ogni esecuzione.
+RUN mkdir -p /etc/bareos && \
+    echo 'MTX=/usr/sbin/mtx' >> /etc/bareos/mtx-changer.conf && \
+    echo 'MT=/usr/sbin/mt' >> /etc/bareos/mtx-changer.conf
+
 COPY --from=bareos-builder:latest /bareos-install/ /
 COPY templates/bareos-sd.conf.tpl /etc/bareos/templates/
 COPY config/bareos-sd.d/device/  /etc/bareos/bareos-sd.d/device/

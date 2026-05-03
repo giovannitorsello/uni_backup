@@ -3,7 +3,7 @@
 # Richiede kernel headers dell'host montati in /usr/src
 # e modalità privileged per caricare il modulo kernel
 # ================================================================
-FROM debian:trixie AS mhvtl
+FROM debian:bookworm-slim AS debian_base
 
 ARG DEBIAN_FRONTEND=noninteractive
 

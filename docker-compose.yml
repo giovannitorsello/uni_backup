@@ -168,6 +168,8 @@ services:
       - "${TAPE_AUTOCH2_DEVICE_2:-}:${TAPE_AUTOCH2_DEVICE_2:-}"
       - "${TAPE_AUTOCH2_DEVICE_3:-}:${TAPE_AUTOCH2_DEVICE_3:-}"
       - "${TAPE_AUTOCH2_DEVICE_4:-}:${TAPE_AUTOCH2_DEVICE_4:-}"
+    cap_add:
+      - SYS_RAWIO
     volumes:
       - ./docker/bareos/bareos_storage:/var/lib/bareos/storage
       - ./docker/bareos/bareos_plugin:/usr/lib/bareos/plugins
