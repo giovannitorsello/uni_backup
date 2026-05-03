@@ -1,0 +1,47 @@
+# Immagine: bareos-base:latest
+FROM debian:bookworm-slim AS debian_base
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        gettext-base \
+        postgresql-client \
+        ca-certificates \        
+        liblzo2-2 \
+        libtirpc3 \
+        libpq5 \
+        libpam0g \  
+        libacl1 \
+        libcap2 \
+        libjansson4 \
+        liblz4-1 \
+        libreadline8 \
+        libzstd1 \
+        openssl \
+        gettext-base \
+        git \
+        build-essential \
+        cmake \
+        ninja-build \
+        pkg-config \
+        libtirpc-dev \
+        liblzo2-dev \
+        liblz4-dev \
+        libzstd-dev \
+        zlib1g-dev \
+        libbz2-dev \        
+        libpq-dev \
+        libssl-dev \
+        libacl1-dev \
+        libcap-dev \
+        libpam0g-dev \
+        libreadline-dev \
+        libjansson-dev \
+        python3-dev \        
+        # Necessari per WebUI
+        apache2 \
+        php \
+        libapache2-mod-php \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -r bareos && useradd -r -g bareos -d /var/lib/bareos -s /bin/false bareos \
+    && mkdir -p /etc/bareos /var/lib/bareos /var/log/bareos /run/bareos \
+    && chown -R bareos:bareos /etc/bareos /var/lib/bareos /var/log/bareos /run/bareos

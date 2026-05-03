@@ -3,12 +3,11 @@
 # ================================================================
 
 Storage {
-  Name            = ${SD_NAME}
+  Name            = "${SD_NAME}"
   SDPort          = 9103
-  WorkingDirectory = /var/lib/bareos
-  PidDirectory    = /run/bareos
+  WorkingDirectory = /var/lib/bareos  
   PluginDirectory = /usr/lib/bareos/plugins
-  MaximumConcurrentJobs = 20
+  Maximum Concurrent Jobs = 20
   SDAddress       = 0.0.0.0
 }
 
@@ -17,7 +16,7 @@ Storage {
 # ----------------------------------------------------------------
 Director {
   Name     = bareos-dir
-  Password = "${DIRECTOR_PASSWORD}"
+  Password = "${BAREOS_DIRECTOR_PASSWORD}"
   Monitor  = no
 }
 

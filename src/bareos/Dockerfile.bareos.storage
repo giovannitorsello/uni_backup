@@ -1,0 +1,20 @@
+
+# STORAGE
+FROM bareos-base:latest AS ueb-bareos-storage
+
+ARG BAREOS_DIRECTOR_PASSWORD
+ARG SD_NAME
+
+RUN apt-get update && apt-get install -y \
+    mtx \
+    mt-st \
+    lsscsi \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=bareos-builder:latest /bareos-install/ /
+COPY templates/bareos-sd.conf.tpl /etc/bareos/templates/
+COPY config/bareos-sd.d/device/  /etc/bareos/bareos-sd.d/device/
+COPY entriespoint/entrypoint-sd.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh && ldconfig
+EXPOSE 9102
+ENTRYPOINT ["/entrypoint.sh"]

@@ -1,0 +1,18 @@
+# DIRECTOR
+FROM bareos-base:latest AS director
+
+ARG BAREOS_DB_NAME
+ARG BAREOS_DB_HOST
+ARG BAREOS_DB_PORT
+ARG BAREOS_DB_USER
+ARG BAREOS_DB_PASSWORD
+ARG BAREOS_DIRECTOR_PASSWORD
+
+# Copiamo i binari dall'immagine builder esterna
+COPY --from=bareos-builder:latest /bareos-install/ /
+COPY templates/bareos-dir.conf.tpl     /etc/bareos/templates/
+COPY templates/bareos-console.conf.tpl /etc/bareos/templates/
+COPY entriespoint/entrypoint-dir.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh && ldconfig
+EXPOSE 9101
+ENTRYPOINT ["/entrypoint.sh"]

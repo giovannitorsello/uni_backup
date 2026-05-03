@@ -9,62 +9,49 @@ log() { echo "[bareos-sd] $(date '+%H:%M:%S') $*"; }
 # 1. Processa template configurazione
 # ---------------------------------------------------------------
 log "Elaborazione template configurazione..."
+log() { echo "[bareos-dir] $(date '+%H:%M:%S') $*"; }
 
-envsubst '${DIRECTOR_PASSWORD} ${SD_NAME}' \
-  < /etc/bareos/templates/bareos-sd.conf.tpl \
-  > /etc/bareos/bareos-sd.conf
+# ---------------------------------------------------------------
+# 1. Processa i template di configurazione con envsubst
+#    Le variabili sostituite sono elencate esplicitamente per
+#    evitare di toccare eventuali ${...} nel config Bareos stesso
+# ---------------------------------------------------------------
+log "Elaborazione template configurazione..."
+export SD_NAME
+export BAREOS_DIRECTOR_PASSWORD BAREOS_SD_PASSWORD
+export CHANGER_DEVICE_1 TAPE_AUTOCH1_DEVICE_1 TAPE_AUTOCH1_DEVICE_2 TAPE_AUTOCH1_DEVICE_3 TAPE_AUTOCH1_DEVICE_4
+export CHANGER_DEVICE_2 TAPE_AUTOCH2_DEVICE_1 TAPE_AUTOCH2_DEVICE_2 TAPE_AUTOCH2_DEVICE_3 TAPE_AUTOCH2_DEVICE_4
 
-chown bareos:bareos /etc/bareos/bareos-sd.conf
+echo "[DEBUG RUNTIME] Verifico variabili d'ambiente:"
+echo "DIRECTOR_PASSWORD: $BAREOS_DIRECTOR_PASSWORD"
+echo "SD_PASSWORD: $BAREOS_SD_PASSWORD"
+echo "SD_NAME: $SD_NAME"
 
+
+envsubst < /etc/bareos/templates/bareos-sd.conf.tpl > /etc/bareos/bareos-sd.conf
 log "Template elaborato."
+cp         /etc/bareos/bareos-sd.d/device/autochanger-mhvtl.conf.tpl /etc/bareos/bareos-sd.d/device/active-autochanger.conf.tpl
+envsubst < /etc/bareos/bareos-sd.d/device/active-autochanger.conf.tpl > /etc/bareos/bareos-sd.d/device/active-autochanger.conf
+log "Template autochanger elaborato."
 
-# ---------------------------------------------------------------
-# 2. Selezione device / autochanger in base all'ambiente
-#
-#    TAPE_DEVICE non impostato  → file-based (sviluppo, CI)
-#    TAPE_DEVICE=/dev/sg*       → mhvtl     (test libreria virtuale)
-#    TAPE_DEVICE=/dev/nst*      → hardware  (produzione)
-# ---------------------------------------------------------------
-case "${TAPE_DEVICE:-}" in
-
-  "")
-    log "DEV MODE: nessun device fisico — autochanger file-based"
-    # Crea le directory che simulano gli slot della libreria
-    for slot in slot0 slot1 slot2 slot3; do
-      mkdir -p /var/lib/bareos/storage/${slot}
-    done
-    cp "${DEVICE_CONF_DIR}/autochanger-dev.conf" \
-       "${DEVICE_CONF_DIR}/active-autochanger.conf"
-    ;;
-
+case "${CHANGER_DEVICE_1:-}" in
   /dev/sg*)
-    log "MHVTL MODE: libreria virtuale mhvtl — changer ${TAPE_DEVICE}"
+    log "MHVTL MODE: libreria virtuale mhvtl — changer ${CHANGER_DEVICE_1}"
     # Verifica che il changer device sia accessibile prima di procedere
-    if [ ! -c "${TAPE_DEVICE}" ]; then
-      log "ERRORE: ${TAPE_DEVICE} non trovato — il modulo mhvtl è caricato sull'host?"
+    if [ ! -c "${CHANGER_DEVICE_1}" ]; then
+      log "ERRORE: ${CHANGER_DEVICE_1} non trovato — il modulo mhvtl è caricato sull'host?"
       exit 1
     fi
-    cp "${DEVICE_CONF_DIR}/autochanger-mhvtl.conf" \
-       "${DEVICE_CONF_DIR}/active-autochanger.conf"
-    ;;
+esac
 
-  /dev/nst*)
-    log "PROD MODE: hardware reale — drive ${TAPE_DEVICE}"
-    # Verifica che il device nastro sia accessibile
-    if [ ! -c "${TAPE_DEVICE}" ]; then
-      log "ERRORE: ${TAPE_DEVICE} non trovato — il drive è acceso e collegato?"
+case "${CHANGER_DEVICE_2:-}" in
+  /dev/sg*)
+    log "MHVTL MODE: libreria virtuale mhvtl — changer ${CHANGER_DEVICE_2}"
+    # Verifica che il changer device sia accessibile prima di procedere
+    if [ ! -c "${CHANGER_DEVICE_2}" ]; then
+      log "ERRORE: ${CHANGER_DEVICE_2} non trovato — il modulo mhvtl è caricato sull'host?"
       exit 1
     fi
-    cp "${DEVICE_CONF_DIR}/autochanger-prod.conf" \
-       "${DEVICE_CONF_DIR}/active-autochanger.conf"
-    ;;
-
-  *)
-    log "ERRORE: TAPE_DEVICE='${TAPE_DEVICE}' non riconosciuto."
-    log "        Valori attesi: vuoto | /dev/sg<N> | /dev/nst<N>"
-    exit 1
-    ;;
-
 esac
 
 log "Configurazione device attiva: $(basename $(readlink -f ${DEVICE_CONF_DIR}/active-autochanger.conf))"
@@ -72,17 +59,19 @@ log "Configurazione device attiva: $(basename $(readlink -f ${DEVICE_CONF_DIR}/a
 # ---------------------------------------------------------------
 # 3. Assicura permessi sulle directory di storage
 # ---------------------------------------------------------------
+chown bareos:bareos /etc/bareos/bareos-sd.conf
+
 mkdir -p /var/lib/bareos/storage
 chown -R bareos:bareos \
   /var/lib/bareos \
-  /run/bareos \
+  /var/run/bareos \
   /var/log/bareos \
   "${DEVICE_CONF_DIR}/active-autochanger.conf"
 
 # ---------------------------------------------------------------
 # 4. Avvia Storage Daemon in foreground
 # ---------------------------------------------------------------
-log "Avvio bareos-sd (nome: ${SD_NAME:-bareos-sd-01})..."
+log "Avvio bareos-sd (nome: ${SD_NAME:-bareos-sd})..."
 exec /usr/sbin/bareos-sd \
   -f \
   -u bareos \

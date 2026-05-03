@@ -1,0 +1,11 @@
+# Usa l'ultima immagine stabile del 2026
+FROM chrislusf/seaweedfs:latest
+
+# Crea le directory per i dati e i metadati del filer
+RUN mkdir -p /data/mdir /data/vol /data/filerdb
+
+# Espone le porte: 9333 (Master), 8080 (Filer), 8333 (S3)
+EXPOSE 9333 8080 8333
+
+# Punto di ingresso per far girare SeaweedFS in modalità tutto-in-uno con S3 attivo
+ENTRYPOINT ["weed", "server", "-s3", "-ip=localhost", "-dir=/data/vol", "-filer=true"]

@@ -9,29 +9,40 @@ log() { echo "[bareos-dir] $(date '+%H:%M:%S') $*"; }
 #    evitare di toccare eventuali ${...} nel config Bareos stesso
 # ---------------------------------------------------------------
 log "Elaborazione template configurazione..."
+echo "[DEBUG RUNTIME] Verifico variabili d'ambiente:"
+echo "DB_NAME: $BAREOS_DB_NAME"
+echo "DB_HOST: $BAREOS_DB_HOST"
+echo "DB_PORT: $BAREOS_DB_PORT"
+echo "DB_USER: $BAREOS_DB_USER"
+echo "DB_USER: $BAREOS_DB_PASSWORD"
+echo "DB_PASSWORD: $BAREOS_DB_PASSWORD"
+echo "DIRECTOR_PASSWORD: $BAREOS_DIRECTOR_PASSWORD"
+echo "SMTP_USER: $BAREOS_SMTP_USER"
+echo "SMTP_PASSWORD: $BAREOS_SMTP_PASSWORD"
+echo "SMTP_HOST: $BAREOS_SMTP_HOST"
+echo "SMTP_PORT: $BAREOS_SMTP_PORT"
 
-VARS='${DIRECTOR_PASSWORD} ${DB_HOST} ${DB_PORT} ${DB_NAME} ${DB_USER} ${DB_PASSWORD}'
+which envsubst || echo "ERRORE: envsubst NON TROVATO"
 
-envsubst "$VARS" \
-  < /etc/bareos/templates/bareos-dir.conf.tpl \
-  > /etc/bareos/bareos-dir.conf
+export BAREOS_DB_NAME BAREOS_DB_HOST BAREOS_DB_PORT BAREOS_DB_USER BAREOS_DB_PASSWORD
+export BAREOS_SMTP_HOST BAREOS_SMTP_PORT BAREOS_SMTP_USER BAREOS_SMTP_PASSWORD
+export BAREOS_DIRECTOR_PASSWORD BAREOS_SD_PASSWORD
 
-envsubst '$DIRECTOR_PASSWORD' \
-  < /etc/bareos/templates/bareos-console.conf.tpl \
-  > /etc/bareos/bconsole.conf
-
-chown bareos:bareos /etc/bareos/bareos-dir.conf /etc/bareos/bconsole.conf
+# 2. Usa envsubst SENZA filtri
+# Questo sostituirà OGNI variabile definita nell'ambiente
+envsubst < /etc/bareos/templates/bareos-dir.conf.tpl > /etc/bareos/bareos-dir.conf
+envsubst < /etc/bareos/templates/bareos-console.conf.tpl > /etc/bareos/bconsole.conf
 log "Template elaborati."
 
 # ---------------------------------------------------------------
 # 2. Attendi che PostgreSQL sia pronto
 # ---------------------------------------------------------------
-log "Attesa PostgreSQL su ${DB_HOST}:${DB_PORT:-5432}..."
+log "Attesa PostgreSQL su ${BAREOS_DB_HOST}:${BAREOS_DB_PORT:-5432}..."
 until pg_isready \
-    -h "${DB_HOST}" \
-    -p "${DB_PORT:-5432}" \
-    -U "${DB_USER}" \
-    -d "${DB_NAME}" \
+    -h "${BAREOS_DB_HOST}" \
+    -p "${BAREOS_DB_PORT:-5432}" \
+    -U "${BAREOS_DB_USER}" \
+    -d "${BAREOS_DB_NAME}" \
     2>/dev/null; do
   log "  PostgreSQL non pronto, ritento tra 3 secondi..."
   sleep 3
@@ -43,18 +54,18 @@ log "PostgreSQL pronto."
 #    Usa le variabili standard PostgreSQL per psql e per gli
 #    script Bareos (che leggono db_user, db_host ecc.)
 # ---------------------------------------------------------------
-export PGHOST="${DB_HOST}"
-export PGPORT="${DB_PORT:-5432}"
-export PGUSER="${DB_USER}"
-export PGPASSWORD="${DB_PASSWORD}"
-export PGDATABASE="${DB_NAME}"
+export PGDATABASE="${BAREOS_DB_NAME}"
+export PGHOST="${BAREOS_DB_HOST}"
+export PGPORT="${BAREOS_DB_PORT:-5432}"
+export PGUSER="${BAREOS_DB_USER}"
+export PGPASSWORD="${BAREOS_DB_PASSWORD}"
 
 # Variabili lette dagli script Bareos create_bareos_database ecc.
-export db_host="${DB_HOST}"
-export db_port="${DB_PORT:-5432}"
-export db_user="${DB_USER}"
-export db_password="${DB_PASSWORD}"
-export db_name="${DB_NAME}"
+export db_name="${BAREOS_DB_NAME}"
+export db_host="${BAREOS_DB_HOST}"
+export db_port="${BAREOS_DB_PORT:-5432}"
+export db_user="${BAREOS_DB_USER}"
+export db_password="${BAREOS_DB_PASSWORD}"
 
 if ! psql -c "SELECT 1 FROM Job LIMIT 1" > /dev/null 2>&1; then
   log "Prima esecuzione: inizializzazione catalogo Bareos..."
@@ -78,6 +89,11 @@ fi
 # ---------------------------------------------------------------
 # 4. Avvia il Director in foreground
 # ---------------------------------------------------------------
+log "Sistemazione permessi directory..."
+chown bareos:bareos /etc/bareos/bareos-dir.conf /etc/bareos/bconsole.conf
+chown -R bareos:bareos /etc/bareos  /var/lib/bareos /var/log/bareos /run/bareos
+chmod -R 750 /etc/bareos /var/lib/bareos /var/log/bareos /var/run/bareos
+
 log "Avvio bareos-dir..."
 exec /usr/sbin/bareos-dir \
   -f \

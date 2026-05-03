@@ -1,0 +1,4 @@
+tls:
+  certificates:
+    - certFile: /etc/traefik/certs/ueb.crt
+      keyFile:  /etc/traefik/certs/ueb.key

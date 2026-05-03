@@ -5,8 +5,7 @@
 Client {
   Name            = ${FD_NAME}
   FDPort          = 9102
-  WorkingDirectory = /var/lib/bareos
-  PidDirectory    = /run/bareos
+  WorkingDirectory = /var/lib/bareos  
   PluginDirectory = /usr/lib/bareos/plugins
   MaximumConcurrentJobs = 10
 }
@@ -16,8 +15,7 @@ Client {
 # ----------------------------------------------------------------
 Director {
   Name     = bareos-dir
-  Password = "${DIRECTOR_PASSWORD}"
-  Monitor  = no
+  Password = "${BAREOS_DIRECTOR_PASSWORD}"
 }
 
 # ----------------------------------------------------------------

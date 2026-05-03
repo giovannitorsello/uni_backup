@@ -1,0 +1,13 @@
+# CLIENT
+FROM bareos-base:latest AS ueb-bareos-client
+
+ARG FD_NAME
+ARG BAREOS_DIRECTOR_PASSWORD
+
+
+COPY --from=bareos-builder:latest /bareos-install/ /
+COPY entriespoint/entrypoint-fd.sh /entrypoint.sh
+COPY templates/bareos-fd.conf.tpl /etc/bareos/templates/
+RUN chmod +x /entrypoint.sh && ldconfig
+EXPOSE 9103
+ENTRYPOINT ["/entrypoint.sh"]
